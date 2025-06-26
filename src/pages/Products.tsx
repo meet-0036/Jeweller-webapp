@@ -1,106 +1,125 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Filter, Search, Star, ShoppingCart } from 'lucide-react';
-import { useCart } from '../contexts/CartContext';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Filter, Search, Star, ShoppingCart } from "lucide-react";
+import { useCart } from "../contexts/CartContext";
+
+import dropearrings from "../assets/dropearrings.jpg";
+import goldbracslet from "../assets/goldbracslet.jpg";
+import goldring from "../assets/goldring.jpg";
+import banglesilver from "../assets/banglesilver.jpg";
+import earrings from "../assets/earrings.jpg";
+import necklace from "../assets/necklace.jpg";
 
 const Products: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [priceRange, setPriceRange] = useState('all');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [priceRange, setPriceRange] = useState("all");
+  const [searchTerm, setSearchTerm] = useState("");
   const [showFilters, setShowFilters] = useState(false);
   const { addToCart } = useCart();
 
   const products = [
     {
-      id: '1',
-      name: 'Royal Gold Necklace Set',
+      id: "1",
+      name: "Royal Gold Necklace Set",
       price: 125000,
-      category: 'necklaces',
-      image: 'https://images.pexels.com/photos/1616805/pexels-photo-1616805.jpeg?auto=compress&cs=tinysrgb&w=500',
+      category: "necklaces",
+      image:
+        necklace,
       rating: 4.9,
-      weight: '25.5g',
-      purity: '22K Gold',
+      weight: "25.5g",
+      purity: "22K Gold",
     },
     {
-      id: '2',
-      name: 'Diamond Studded Earrings',
+      id: "2",
+      name: "Diamond Studded Earrings",
       price: 75000,
-      category: 'earrings',
-      image: 'https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=500',
+      category: "earrings",
+      image:
+        earrings,
       rating: 4.8,
-      weight: '8.2g',
-      purity: '18K Gold',
+      weight: "8.2g",
+      purity: "18K Gold",
     },
     {
-      id: '3',
-      name: 'Traditional Silver Bangles',
+      id: "3",
+      name: "Traditional Silver Bangles",
       price: 35000,
-      category: 'bangles',
-      image: 'https://images.pexels.com/photos/1616804/pexels-photo-1616804.jpeg?auto=compress&cs=tinysrgb&w=500',
+      category: "bangles",
+      image:
+        banglesilver,
       rating: 4.7,
-      weight: '45.0g',
-      purity: '92.5% Silver',
+      weight: "45.0g",
+      purity: "92.5% Silver",
     },
     {
-      id: '4',
-      name: 'Emerald Gold Ring',
+      id: "4",
+      name: "Emerald Gold Ring",
       price: 95000,
-      category: 'rings',
-      image: 'https://images.pexels.com/photos/1721936/pexels-photo-1721936.jpeg?auto=compress&cs=tinysrgb&w=500',
+      category: "rings",
+      image:
+        goldring,
       rating: 4.9,
-      weight: '6.8g',
-      purity: '22K Gold',
+      weight: "6.8g",
+      purity: "22K Gold",
     },
     {
-      id: '5',
-      name: 'Pearl Drop Earrings',
+      id: "5",
+      name: "Pearl Drop Earrings",
       price: 55000,
-      category: 'earrings',
-      image: 'https://images.pexels.com/photos/1721937/pexels-photo-1721937.jpeg?auto=compress&cs=tinysrgb&w=500',
+      category: "earrings",
+      image:
+        dropearrings,
       rating: 4.6,
-      weight: '4.2g',
-      purity: '18K Gold',
+      weight: "4.2g",
+      purity: "18K Gold",
     },
     {
-      id: '6',
-      name: 'Antique Gold Bracelet',
+      id: "6",
+      name: "Antique Gold Bracelet",
       price: 85000,
-      category: 'bracelets',
-      image: 'https://images.pexels.com/photos/1721938/pexels-photo-1721938.jpeg?auto=compress&cs=tinysrgb&w=500',
+      category: "bracelets",
+      image:
+        goldbracslet,
       rating: 4.8,
-      weight: '18.5g',
-      purity: '22K Gold',
+      weight: "18.5g",
+      purity: "22K Gold",
     },
   ];
 
   const categories = [
-    { value: 'all', label: 'All Products' },
-    { value: 'necklaces', label: 'Necklaces' },
-    { value: 'earrings', label: 'Earrings' },
-    { value: 'rings', label: 'Rings' },
-    { value: 'bangles', label: 'Bangles' },
-    { value: 'bracelets', label: 'Bracelets' },
+    { value: "all", label: "All Products" },
+    { value: "necklaces", label: "Necklaces" },
+    { value: "earrings", label: "Earrings" },
+    { value: "rings", label: "Rings" },
+    { value: "bangles", label: "Bangles" },
+    { value: "bracelets", label: "Bracelets" },
   ];
 
   const priceRanges = [
-    { value: 'all', label: 'All Prices' },
-    { value: '0-50000', label: 'Under ₹50,000' },
-    { value: '50000-100000', label: '₹50,000 - ₹1,00,000' },
-    { value: '100000-200000', label: '₹1,00,000 - ₹2,00,000' },
-    { value: '200000+', label: 'Above ₹2,00,000' },
+    { value: "all", label: "All Prices" },
+    { value: "0-50000", label: "Under ₹50,000" },
+    { value: "50000-100000", label: "₹50,000 - ₹1,00,000" },
+    { value: "100000-200000", label: "₹1,00,000 - ₹2,00,000" },
+    { value: "200000+", label: "Above ₹2,00,000" },
   ];
 
-  const filteredProducts = products.filter(product => {
-    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-    
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory =
+      selectedCategory === "all" || product.category === selectedCategory;
+    const matchesSearch = product.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
     let matchesPrice = true;
-    if (priceRange !== 'all') {
-      const [min, max] = priceRange.split('-').map(p => parseInt(p) || Infinity);
-      matchesPrice = product.price >= min && (max === Infinity || product.price <= max);
+    if (priceRange !== "all") {
+      const [min, max] = priceRange
+        .split("-")
+        .map((p) => parseInt(p) || Infinity);
+      matchesPrice =
+        product.price >= min && (max === Infinity || product.price <= max);
     }
-    
+
     return matchesCategory && matchesSearch && matchesPrice;
   });
 
@@ -142,7 +161,11 @@ const Products: React.FC = () => {
                 </button>
               </div>
 
-              <div className={`space-y-6 ${showFilters ? 'block' : 'hidden lg:block'}`}>
+              <div
+                className={`space-y-6 ${
+                  showFilters ? "block" : "hidden lg:block"
+                }`}
+              >
                 {/* Search */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -170,7 +193,7 @@ const Products: React.FC = () => {
                     onChange={(e) => setSelectedCategory(e.target.value)}
                     className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent"
                   >
-                    {categories.map(category => (
+                    {categories.map((category) => (
                       <option key={category.value} value={category.value}>
                         {category.label}
                       </option>
@@ -188,7 +211,7 @@ const Products: React.FC = () => {
                     onChange={(e) => setPriceRange(e.target.value)}
                     className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent"
                   >
-                    {priceRanges.map(range => (
+                    {priceRanges.map((range) => (
                       <option key={range.value} value={range.value}>
                         {range.label}
                       </option>
@@ -225,7 +248,9 @@ const Products: React.FC = () => {
                     <div className="absolute top-4 left-4">
                       <div className="flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full">
                         <Star className="h-4 w-4 text-gold-500 fill-current" />
-                        <span className="text-sm font-medium">{product.rating}</span>
+                        <span className="text-sm font-medium">
+                          {product.rating}
+                        </span>
                       </div>
                     </div>
                     <button
@@ -241,8 +266,12 @@ const Products: React.FC = () => {
                       {product.name}
                     </h3>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-gray-600">{product.weight}</span>
-                      <span className="text-sm text-gray-600">{product.purity}</span>
+                      <span className="text-sm text-gray-600">
+                        {product.weight}
+                      </span>
+                      <span className="text-sm text-gray-600">
+                        {product.purity}
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <p className="text-2xl font-bold text-gold-600">

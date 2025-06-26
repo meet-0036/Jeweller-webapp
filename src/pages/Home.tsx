@@ -3,27 +3,31 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Shield, Truck, Award } from 'lucide-react';
 
+import banglesilver from "../assets/banglesilver.jpg";
+import earrings from "../assets/earrings.jpg";
+import necklace from "../assets/necklace.jpg";
+
 const Home: React.FC = () => {
   const featuredProducts = [
     {
       id: '1',
       name: 'Royal Gold Necklace Set',
       price: 125000,
-      image: 'https://images.pexels.com/photos/1616805/pexels-photo-1616805.jpeg?auto=compress&cs=tinysrgb&w=500',
+      image: necklace,
       rating: 4.9,
     },
     {
       id: '2',
       name: 'Diamond Studded Earrings',
       price: 75000,
-      image: 'https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=500',
+      image: earrings,
       rating: 4.8,
     },
     {
       id: '3',
       name: 'Traditional Silver Bangles',
       price: 35000,
-      image: 'https://images.pexels.com/photos/1616804/pexels-photo-1616804.jpeg?auto=compress&cs=tinysrgb&w=500',
+      image: banglesilver,
       rating: 4.7,
     },
   ];
